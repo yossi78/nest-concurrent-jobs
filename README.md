@@ -13,6 +13,9 @@ This service is a NestJS-based REST API for launching and monitoring concurrent 
 - Node.js (v18 or newer recommended)
 - Windows OS (uses a batch script to simulate C++ jobs)
 
+## Postman collection
+- under resources you can download postman collection 
+
 ## Installation
 ```bash
 npm install

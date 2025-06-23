@@ -65,12 +65,13 @@ export class JobsService {
         job.endTime = new Date();
         job.exitCode = code;
         job.output = output;
-        job.error = error;
-
+        
         if (code === 0) {
           job.status = JobStatus.COMPLETED;
+          job.error = '';
           this.logger.log(`Job ${job.id} completed successfully`);
         } else {
+          job.error = error;
           if (job.retryCount < job.maxRetries) {
             job.status = JobStatus.RETRYING;
             job.retryCount++;
